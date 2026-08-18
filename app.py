@@ -24,7 +24,7 @@ col1, col2, col3 = st.columns(3)
 with col1:
     email = st.text_input("📧 Your Email")
 with col2:
-    match_name = st.text_input("🏟️ Match ID", placeholder="مثال: Arsenal vs Chelsea")
+    match_name = st.text_input("🏟️ Match ID", placeholder="مثال: 12345")
 with col3:
     team_type = st.radio("👕 Team", ["Home", "Away"])
 
