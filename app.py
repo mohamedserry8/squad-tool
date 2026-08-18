@@ -24,7 +24,7 @@ col1, col2, col3 = st.columns(3)
 with col1:
     email = st.text_input("📧 الإيميل بتاعك")
 with col2:
-    match_name = st.text_input("🏟️ اسم الماتش", placeholder="مثال: Arsenal vs Chelsea")
+    match_name = st.text_input("🏟️ Match ID", placeholder="مثال: 12345")
 with col3:
     team_type = st.radio("👕 نوع الفريق", ["Home", "Away"])
 
@@ -66,6 +66,7 @@ if st.button("🔍 قـارن الآن", use_container_width=True):
         elif not missing_from_squad:
             st.success("✅ ممتاز! كل اللاعبين اللي في التشكيل موجودين في القائمة.")
         else:
-            st.warning(f"🔴 تحذير: يوجد {missing_count} لاعب في التشكيل مش موجودين في القائمة:")
+       st.warning(f"🔴 تحذير: يوجد {missing_count} لاعب في التشكيل مش موجودين في القائمة:")
             for player_id in sorted(missing_from_squad):
-                st.write(f"➔ الناقص ID: **{player_id}**")
+                st.write("➔ الناقص ID:")
+                st.code(player_id, language="text")
